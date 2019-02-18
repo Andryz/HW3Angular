@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { data$ } from './common/data/data';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HW3';
+
+  public tours$ = data$;
 }

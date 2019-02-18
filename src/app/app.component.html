@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,5 +16,62 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
 
+<h1>Hot Weather Widget</h1>
+<div class="element">
+    <app-el-left></app-el-left>
+		<div class="element-right">
+			<div class="temperatur">
+				<h5>Et harum quidem</h5>
+				<span class="w-line"> </span>
+				<span class="cloud"> </span>
+				<h2>14<sup class="degree">°</sup></h2>
+				<h6>Water 20<sup class="degree">°</sup></h6>
+			</div>
+			<div class="teddy-bear">
+				<div class="teddy-text">
+					<h4>Nam libero voluptatem</h4>
+					<span class="w-line"> </span>
+					<img src="../assets/img/b1.jpg" alt=""  class="img-responsive">
+			    </div>
+			    <div class="teddy-follow">
+			    	<ul>
+			    		<li class="folw-h"><h3>2850</h3>
+			    			<p>Followers</p>
+			    		</li>
+			    		<li><h3>675</h3>
+			    			<p>Following</p>
+			    		</li>
+			    	</ul>
+			    </div>
+			</div>
+		</div>
+	  <div class="clear"> </div>
+</div>
+<div class="copy-right">
+			<p>© 2015 Hot Weather Widget. All rights reserved | Design by  <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
+</div>
+
+<!-- <div class="scrollbar" id="style-2" *ngIf="(tours$ | async) as tours; else loading">
+    <ng-container *ngFor="let tour of tours">
+        <div class="activity-row">
+          <div class="activity-desc">
+            <h5>{{tour.address}}</h5>
+              <p>Sed perspiciatis</p>
+              <p>Et harum quidem</p>
+              <h6>Tel:+{{tour.phone}}</h6>
+          </div>
+          <div class="activity-img">
+            <ul>
+              <li><img src="{{tour.img}}"  alt=""/></li>
+              <li><img src='{{tour.social_info.img}}'  alt=""/></li>
+            </ul>
+          </div>
+          <div class="clear"> </div>
+        </div>
+    </ng-container>
+    <ng-template #loading>
+      ...loading
+    </ng-template>
+</div> -->
