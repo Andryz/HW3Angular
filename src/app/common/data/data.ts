@@ -24,7 +24,6 @@ export const data: IData[] =[
     {
         img: '../assets/img/hotel1.jpg',
         address: 'Hilton, Kiev, Ukraine',
-        // address: 'Taras Shevchenko Boulevard 30, Kiev, 01030, Ukraine',
         phone:  380671234567,
         weather: {
             title: 'Winter Kiev',
@@ -60,73 +59,73 @@ export const data: IData[] =[
     },
     {
         img: '../assets/img/1.jpg',
-        address: 'kiev',
-        phone:  445556555,
+        address: 'XZ',
+        phone:  380671267567,
         weather: {
-            title: 'title weather string',
+            title: 'title Fishing',
             icon: 'string',
             water: -5,
             temperature: 5
         },
         social_info:{ 
-            title: 'title social string',
+            title: 'title social Fishing',
             img: '../assets/img/b1.jpg',
-            followers: 10,
-            following: 20
+            followers: 20,
+            following: 40
         },
         type: 'Fishing'
     },
     {
-        img: 'string',
-        address: 'kiev',
-        phone:  445556555,
+        img: '../assets/img/hotel1.jpg',
+        address: 'Kek city',
+        phone:  380631274567,
         weather: {
-            title: 'title weather string',
+            title: 'title Fishing',
+            icon: 'string',
+            water: -10,
+            temperature: 7
+        },
+        social_info:{ 
+            title: 'title social Fishing',
+            img: '../assets/img/social_kiev.jpg',
+            followers: 30,
+            following: 50
+        },
+        type: 'Fishing'
+    },
+    {
+        img: '../assets/img/1.jpg',
+        address: 'Lol city',
+        phone:  380681256567,
+        weather: {
+            title: 'title weather Tour',
             icon: 'string',
             water: -5,
             temperature: 5
         },
         social_info:{ 
-            title: 'title social string',
-            img: 'string',
-            followers: 10,
-            following: 20
-        },
-        type: 'Fishing'
-    },
-    {
-        img: 'string',
-        address: 'kiev',
-        phone:  445556555,
-        weather: {
-            title: 'title weather string',
-            icon: 'string',
-            water: -5,
-            temperature: 5
-        },
-        social_info:{ 
-            title: 'title social string',
-            img: 'string',
-            followers: 10,
-            following: 20
+            title: 'title social Tour',
+            img: '../assets/img/b1.jpg',
+            followers: 40,
+            following: 60
         },
         type: 'Tour'
     },
     {
-        img: 'string',
-        address: 'kiev',
-        phone:  445556555,
+        img: '../assets/img/hotel2.jpg',
+        address: 'Kiev',
+        phone:  380671004567,
         weather: {
-            title: 'title weather string',
+            title: 'title weather Tour',
             icon: 'string',
             water: -5,
             temperature: 5
         },
         social_info:{ 
-            title: 'title social string',
-            img: 'string',
-            followers: 10,
-            following: 20
+            title: 'title social Tour',
+            img: '../assets/img/social_kiev.jpg',
+            followers: 50,
+            following: 70
         },
         type: 'Tour'
     }

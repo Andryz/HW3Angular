@@ -106,6 +106,8 @@ span.w-line {
   color: #fff;
 }
 .teddy-text img {
+  width: 106px;
+  height: 106px;
   border-radius: 70px;
   border: 3px solid #fff;
 }
@@ -219,7 +221,7 @@ i.text-info{
 }
 .activity-desc h6 {
     color: #fd7b87;
-    font-size: 13px;
+    font-size: 11px;
     margin: 13px 0 0 0;
     font-weight: bold;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { IData } from '../common/data/data';
 
 @Component({
@@ -10,21 +10,43 @@ import { IData } from '../common/data/data';
 export class ElLeftComponent implements OnInit {
 
   @Input()
-  public tours: IData;
+  public tours: IData[];
 
+  @Output()
+  public ImageEmitter = new EventEmitter<IData>();
+
+  // Свойство
   public text = '';
   public firstImg: string;
-  public secondImg: string;
-  public log(value): any{
-    this.firstImg = value.path[2].children[0].children[0].src;
-    console.log(value);
-    console.log(value.path[2].children[0].children[0].src);
-    console.log(value.path[2].children[1].children[0].src);
-    // console.log(value);
-  }
+  public arrTitle = [];
+  public arrTitleUniq = [];
+
+
+
+
   constructor() { }
 
   ngOnInit() {
+    this.uniqArr()
+    this.clickTour(this.tours[0])
+    
+  }
+
+  public clickTour(tour: IData): any{
+    this.firstImg = tour.img
+    this.ImageEmitter.emit(tour);
+  }
+  // Метод
+  uniqArr(){
+    for (let tour of this.tours){
+      this.arrTitle.push(tour.type); 
+    }
+    function uniq( value, index, self){
+      return self.indexOf(value) === index;
+    }
+    this.arrTitleUniq = this.arrTitle.filter(uniq);
   }
 
 }
+
+

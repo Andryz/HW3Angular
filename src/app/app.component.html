@@ -1,42 +1,28 @@
-
 <h1>Hot Weather Widget</h1>
-<div class="element">
+<div class="element"  *ngIf="(tours$ | async) as tours; else loading" >
 
-    <app-el-left *ngIf="(tours$ | async) as tours; else loading" [tours]="tours" ></app-el-left>
-    <ng-template #loading>
-        ...loading
-		</ng-template>
-		
-		<div class="element-right">
-			<div class="temperatur">
-				<h5>Et harum quidem</h5>
-				<span class="w-line"> </span>
-				<span class="cloud"> </span>
-				<h2>14<sup class="degree">°</sup></h2>
-				<h6>Water 20<sup class="degree">°</sup></h6>
-			</div>
-			<div class="teddy-bear">
-				<div class="teddy-text">
-					<h4>Nam libero voluptatem</h4>
-					<span class="w-line"> </span>
-					<img  [src]="firstImg" alt=""  class="img-responsive">
-					{{firstImg}}
-					<!-- src="../assets/img/b1.jpg" -->
-			    </div>
-			    <div class="teddy-follow">
-			    	<ul>
-			    		<li class="folw-h"><h3>2850</h3>
-			    			<p>Followers</p>
-			    		</li>
-			    		<li><h3>675</h3>
-			    			<p>Following</p>
-			    		</li>
-			    	</ul>
-			    </div>
-			</div>
-		</div>
-	  <div class="clear"> </div>
+	<app-el-left
+		[tours]="tours" 
+		(ImageEmitter)="onClickImg($event)">
+	</app-el-left>
+
+
+
+	<div class="element-right">
+
+		<weather [tour]="selectedTour"></weather>
+
+		<stats [tour]="selectedTour"></stats>
+
+	</div>
+	<div class="clear"> </div>
 </div>
+
+<ng-template #loading>
+	...loading
+</ng-template>
+
 <div class="copy-right">
-			<p>© 2015 Hot Weather Widget. All rights reserved | Design by  <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
+	<p>© 2015 Hot Weather Widget. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">
+			W3layouts </a></p>
 </div>
