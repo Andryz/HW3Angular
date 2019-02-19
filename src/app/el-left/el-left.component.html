@@ -1,22 +1,23 @@
 <div class="element-left">
-    <div class="element-bg-img"><img src="../assets/img/1.jpg" alt="" class="img-responsive"> </div>
+    <div class="element-bg-img"><img [src]="firstImg" alt="" class="img-responsive"> </div>
+  <!-- ../assets/img/1.jpg -->
     <div class="element-left-bottom">
       <div class="ele-strip">
-        <ul>
-          <li><a href="#">Hotel</a></li>
-          <li><a href="#">Fishing</a></li>
-          <li><a href="#">Tours</a></li>
-          <li class="anc-bor"><a href="#">Weather</a></li>
+        <ul (click)="text = $event.target.innerText">
+          {{text}}
+          <ng-container *ngFor="let tour of tours" >
+            <li><a href="#">{{tour.type}}</a></li>
+          </ng-container>
+
         </ul>
       </div>
       <div class="village">
         <h3>Righteous indignation & like</h3>
          <span class="line"> </span>
            <div class="activity_box">
-            <div class="scrollbar" id="style-2" *ngIf="(tours$ | async) as tours; else loading">
-
-                <ng-container *ngFor="let tour of tours">
-                    <div class="activity-row">
+            <div class="scrollbar" id="style-2" >
+                <ng-container *ngFor="let tour of tours | titleFilter:text;">
+                    <div class="activity-row" (click)="log($event)">
                       <div class="activity-desc">
                         <h5>{{tour.address}}</h5>
                           <p>Sed perspiciatis</p>
@@ -32,9 +33,7 @@
                       <div class="clear"> </div>
                     </div>
                 </ng-container>
-                <ng-template #loading>
-                  ...loading
-                </ng-template>
+
 
                
                 

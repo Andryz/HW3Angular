@@ -1,26 +1,12 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul> -->
 
 <h1>Hot Weather Widget</h1>
 <div class="element">
-    <app-el-left></app-el-left>
+
+    <app-el-left *ngIf="(tours$ | async) as tours; else loading" [tours]="tours" ></app-el-left>
+    <ng-template #loading>
+        ...loading
+		</ng-template>
+		
 		<div class="element-right">
 			<div class="temperatur">
 				<h5>Et harum quidem</h5>
@@ -33,7 +19,9 @@
 				<div class="teddy-text">
 					<h4>Nam libero voluptatem</h4>
 					<span class="w-line"> </span>
-					<img src="../assets/img/b1.jpg" alt=""  class="img-responsive">
+					<img  [src]="firstImg" alt=""  class="img-responsive">
+					{{firstImg}}
+					<!-- src="../assets/img/b1.jpg" -->
 			    </div>
 			    <div class="teddy-follow">
 			    	<ul>
@@ -52,26 +40,3 @@
 <div class="copy-right">
 			<p>© 2015 Hot Weather Widget. All rights reserved | Design by  <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
 </div>
-
-<!-- <div class="scrollbar" id="style-2" *ngIf="(tours$ | async) as tours; else loading">
-    <ng-container *ngFor="let tour of tours">
-        <div class="activity-row">
-          <div class="activity-desc">
-            <h5>{{tour.address}}</h5>
-              <p>Sed perspiciatis</p>
-              <p>Et harum quidem</p>
-              <h6>Tel:+{{tour.phone}}</h6>
-          </div>
-          <div class="activity-img">
-            <ul>
-              <li><img src="{{tour.img}}"  alt=""/></li>
-              <li><img src='{{tour.social_info.img}}'  alt=""/></li>
-            </ul>
-          </div>
-          <div class="clear"> </div>
-        </div>
-    </ng-container>
-    <ng-template #loading>
-      ...loading
-    </ng-template>
-</div> -->

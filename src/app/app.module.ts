@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ElLeftComponent } from './el-left/el-left.component';
+import { TitleFilterPipe } from './common/pipe/title-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ElLeftComponent
+    ElLeftComponent,
+    TitleFilterPipe
   ],
   imports: [
     BrowserModule
